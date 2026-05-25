@@ -1,0 +1,53 @@
+<section id="testimonios">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Resultados reales</span>
+      <h2 class="section-title">LO QUE DICEN <span>NUESTROS ALUMNOS</span></h2>
+      <p class="section-sub">Más de 500 personas ya transformaron su vida. Aquí van algunas de sus historias.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      @for (t of testimonials; track t.name) {
+        <div class="testimonial-card">
+          <div class="card-top">
+            <img [src]="t.avatar" [alt]="t.name" class="avatar" />
+            <div>
+              <div class="author-name">{{ t.name }}</div>
+              <div class="author-role">{{ t.role }}</div>
+            </div>
+            <div class="stars">
+              @for (s of starsArray; track $index) {
+                <span>★</span>
+              }
+            </div>
+          </div>
+
+          <blockquote>{{ t.text }}</blockquote>
+
+          <div class="result-bar">
+            <div class="result-item">
+              <span class="result-label">Antes</span>
+              <span class="result-val before">{{ t.before }}</span>
+            </div>
+            <div class="result-arrow">→</div>
+            <div class="result-item">
+              <span class="result-label">Después</span>
+              <span class="result-val after">{{ t.after }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="cta-banner">
+      <div class="cta-text">
+        <h3>¿LISTO PARA SER EL PRÓXIMO <span>CASO DE ÉXITO?</span></h3>
+        <p>Agenda hoy tu consulta gratuita y empieza tu transformación.</p>
+      </div>
+      <a href="https://wa.me/1234567890?text=Quiero%20empezar%20mi%20transformación" target="_blank" class="btn-primary">
+        Empezar ahora
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

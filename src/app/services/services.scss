@@ -1,0 +1,128 @@
+#servicios {
+  background: var(--gray-100);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-sub {
+  max-width: 520px;
+  margin: 16px auto 0;
+  color: var(--gray-400);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 36px 32px;
+  border: 1px solid var(--gray-200);
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gray-200);
+    transition: background 0.28s;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+    border-color: transparent;
+
+    &::before { background: var(--primary); }
+  }
+
+  &.popular {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, #fff 0%, #fff8f7 100%);
+
+    &::before { background: var(--primary); }
+  }
+}
+
+.popular-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem;
+  color: var(--secondary);
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+p {
+  color: var(--gray-700);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(232,50,26,0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: gap 0.2s;
+
+  &:hover { gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .services-grid { grid-template-columns: 1fr; }
+}

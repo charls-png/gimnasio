@@ -1,0 +1,21 @@
+<nav [class.scrolled]="scrolled">
+  <div class="nav-inner">
+    <div class="logo" (click)="scrollTo('hero')">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">IRON<strong>FORCE</strong></span>
+    </div>
+
+    <ul class="nav-links" [class.open]="menuOpen">
+      <li><a (click)="scrollTo('servicios')">Servicios</a></li>
+      <li><a (click)="scrollTo('sobre-mi')">Sobre mí</a></li>
+      <li><a (click)="scrollTo('testimonios')">Testimonios</a></li>
+      <li>
+        <a class="nav-cta" (click)="scrollTo('contacto')">Únete ahora</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" (click)="menuOpen = !menuOpen" [class.active]="menuOpen" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
